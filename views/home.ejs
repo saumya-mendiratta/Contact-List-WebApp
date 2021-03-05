@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+        <%= title %>
+    </title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+
+<body>
+
+    <!-- <h1>Rendered from ejs view</h1> -->
+    <h1 id="page-heading">
+        <i class="far fa-address-card"></i>
+        Contact List
+    </h1>
+
+
+    <form action="/create-contact"  method="POST">
+
+        <input type="text" name="name" placeholder="Enter Name" required>
+        <input type="number" name="phone" placeholder=" Enter Phone">
+
+        <button type="submit">Add Contact</button>
+
+    </form>
+
+
+    <div id="contact-list">
+        <ul>
+            <% for(let i of contact_list){ %>
+                <li>
+                    <p> <%= i.name %> </p>
+                    <p> <%= i.phone %> </p>
+
+                    <div class="delete-button">
+                         <!-- <a href="/delete-contact/?phone=<%= i.phone %>&name=<%= i.name %>"> -->
+                         <a href="/delete-contact/?id=<%= i.id %>"> 
+                            <i class="fas fa-window-close"></i>
+                        </a>
+                    </div>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+    
+
+     <script src="/js/three.r119.min.js"></script>
+    <script src="/js/vanta.waves.min.js"></script>
+    <script>
+    VANTA.WAVES({
+    el: "body",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    scale: 1.00,
+    scaleMobile: 1.00,
+    color: 0x1e1e22,
+    shininess: 49.00,
+    waveHeight: 9.00,
+    waveSpeed: 0.85,
+    zoom: 0.91
+    })
+    </script>
+
+    <script type="text/javascript" src="/js/home.js"></script>
+</body>
+</html>
