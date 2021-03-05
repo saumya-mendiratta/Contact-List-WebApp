@@ -4,7 +4,7 @@ This is a Contacts List WebApp made by using NodeJs with Express framework and e
 
 # How to Run
 1. Install NodeJs (nodejs.org).
-2. Fork, Clone and open this repository in a terminal/command prompt.
+2. Fork, Clone or download and open this repository in a terminal/command prompt.
 3. Execute `node .\index.js`.
 4. Open your preferred web browser and go to `https://localhost:8000`.
 
